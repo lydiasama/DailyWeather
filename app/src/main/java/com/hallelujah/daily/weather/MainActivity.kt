@@ -1,7 +1,6 @@
 package com.hallelujah.daily.weather
 
 import android.app.Activity
-import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -21,11 +20,15 @@ class MainActivity : AppCompatActivity(), MainView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setOnClickButton()
+        setOnDoneAction()
+        keyboardManager(SHOW_KEYBOARD)
+    }
+
+    private fun setOnClickButton() {
         btnCurrentWeather.setOnClickListener {
             mainPresenter.callServiceGetCurrentWeather(city = "Bangkok", unit = "metric")
         }
-        setOnDoneAction()
-        keyboardManager(SHOW_KEYBOARD)
     }
 
     override fun gotoWeatherActivity() {
