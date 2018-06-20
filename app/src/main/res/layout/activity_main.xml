@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
     
     <EditText
-        android:id="@+id/tvCity"
+        android:id="@+id/etCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_large"
@@ -17,7 +17,8 @@
         app:layout_constraintVertical_bias="0.4"
         android:inputType="text"
         android:imeOptions="actionDone"
-        android:hint="@string/city"/>
+        android:hint="@string/city"
+        android:focusable="true"/>
 
     <Button
         android:id="@+id/btnCurrentWeather"
@@ -25,6 +26,6 @@
         android:visibility="gone"
         android:layout_height="wrap_content"
         android:text="@string/btn_current_weather"
-        app:layout_constraintTop_toBottomOf="@+id/tvCity" />
+        app:layout_constraintTop_toBottomOf="@+id/etCity" />
 
 </android.support.constraint.ConstraintLayout>
