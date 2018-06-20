@@ -22,10 +22,13 @@
 
     <Button
         android:id="@+id/btnCurrentWeather"
-        android:layout_width="match_parent"
-        android:visibility="gone"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:text="@string/btn_current_weather"
-        app:layout_constraintTop_toBottomOf="@+id/etCity" />
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@+id/etCity"
+        app:layout_constraintStart_toStartOf="@id/etCity"
+        app:layout_constraintEnd_toEndOf="@id/etCity"/>
 
 </android.support.constraint.ConstraintLayout>
