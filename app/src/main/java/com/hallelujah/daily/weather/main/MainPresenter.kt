@@ -1,5 +1,6 @@
-package com.hallelujah.daily.weather
+package com.hallelujah.daily.weather.main
 
+import com.hallelujah.daily.weather.API_KEY
 import com.hallelujah.daily.weather.core.api.WeatherAPI
 import com.hallelujah.daily.weather.core.callback.CurrentWeatherCallback
 import com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel

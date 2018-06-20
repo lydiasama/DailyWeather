@@ -1,7 +1,7 @@
 package com.hallelujah.daily.weather.core.callback
 
 import android.util.Log
-import com.hallelujah.daily.weather.MainView
+import com.hallelujah.daily.weather.main.MainView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

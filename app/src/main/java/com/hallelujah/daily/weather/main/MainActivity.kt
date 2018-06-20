@@ -1,4 +1,4 @@
-package com.hallelujah.daily.weather
+package com.hallelujah.daily.weather.main
 
 import android.app.Activity
 import android.os.Bundle
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import com.hallelujah.daily.weather.DEFAULT_UNIT
+import com.hallelujah.daily.weather.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainView {
