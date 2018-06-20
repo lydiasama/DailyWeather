@@ -5,11 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    
+    <EditText
+        android:id="@+id/tvCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        android:inputType="text"
+        android:imeOptions="actionDone"
+        android:hint="@string/city"/>
 
     <Button
         android:id="@+id/btnCurrentWeather"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="wrap_content"
-        android:text="test current weather service"/>
+        android:text="@string/btn_current_weather"
+        app:layout_constraintTop_toBottomOf="@+id/tvCity" />
 
 </android.support.constraint.ConstraintLayout>

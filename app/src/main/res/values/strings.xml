@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DailyWeather</string>
+    <string name="city">CITY</string>
+    <string name="btn_current_weather" formatted="false">What\'s the weather at %s like?</string>
 </resources>
