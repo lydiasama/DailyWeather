@@ -27,7 +27,9 @@ class MainActivity : AppCompatActivity(), MainView {
 
     private fun setOnClickButton() {
         btnCurrentWeather.setOnClickListener {
-            mainPresenter.callServiceGetCurrentWeather(city = "Bangkok", unit = "metric")
+            mainPresenter.callServiceGetCurrentWeather(
+                    city = etCity.text.toString(),
+                    unit = DEFAULT_UNIT)
         }
     }
 
