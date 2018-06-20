@@ -1,19 +1,22 @@
 package com.hallelujah.daily.weather.core.callback
 
+import android.util.Log
 import com.hallelujah.daily.weather.MainView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-open class CurrentWeatherCallback<CurrentWeatherResponseModel>(var view: MainView): Callback<CurrentWeatherResponseModel> {
+open class CurrentWeatherCallback<CurrentWeatherResponseModel>(var view: MainView): Callback<com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel> {
 
 
-    override fun onFailure(call: Call<CurrentWeatherResponseModel>?, t: Throwable?) {
+    override fun onFailure(call: Call<com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel>?, t: Throwable?) {
 
     }
 
-    override fun onResponse(call: Call<CurrentWeatherResponseModel>, response: Response<CurrentWeatherResponseModel>) {
-
+    override fun onResponse(call: Call<com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel>, response: Response<com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel>) {
+        Log.d("WEATHER" ,response.isSuccessful.toString())
+        Log.d("WEATHER" ,response.body().toString())
+        Log.d("WEATHER" ,response.body()?.main?.temp.toString())
     }
 
 }

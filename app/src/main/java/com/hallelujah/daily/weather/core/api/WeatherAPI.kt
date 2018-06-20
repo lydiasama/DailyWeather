@@ -3,14 +3,14 @@ package com.hallelujah.daily.weather.core.api
 import com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.Query
 
 
 interface WeatherAPI {
 
-    @GET("weather?q={city}&units={unit}&appid={API_KEY}")
+    @GET("weather")
     fun getCurrentWeather(
-            @Path("city") city: String,
-            @Path("unit") unit: String,
-            @Path("API_KEY") API_KEY: String): Call<CurrentWeatherResponseModel>
+            @Query("q") city: String,
+            @Query("units") unit: String,
+            @Query("appid") API_KEY: String): Call<CurrentWeatherResponseModel>
 }
