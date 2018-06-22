@@ -3,4 +3,5 @@
     <string name="city">CITY</string>
     <string name="btn_current_weather" formatted="false">What\'s the weather at %s like?</string>
     <string name="degree_celsius">°C</string>
+    <string name="humidity" formatted="false">Humidity is %1$s%%</string>
 </resources>

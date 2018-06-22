@@ -1,6 +1,7 @@
 package com.hallelujah.daily.weather.main
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -8,6 +9,7 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import com.hallelujah.daily.weather.DEFAULT_UNIT
 import com.hallelujah.daily.weather.R
+import com.hallelujah.daily.weather.currentWeather.CurrentWeatherActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainView {
@@ -36,7 +38,7 @@ class MainActivity : AppCompatActivity(), MainView {
     }
 
     override fun gotoCurrentWeatherActivity() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        startActivity(Intent(this, CurrentWeatherActivity::class.java))
     }
 
     private fun setOnDoneAction() {
