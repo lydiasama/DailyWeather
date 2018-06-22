@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity(), MainView {
         }
     }
 
-    override fun gotoWeatherActivity() {
+    override fun gotoCurrentWeatherActivity() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity(), MainView {
                 return@setOnEditorActionListener false
             }
         }
-
     }
 
     private fun visibleButtonGetCurrentWeather() {

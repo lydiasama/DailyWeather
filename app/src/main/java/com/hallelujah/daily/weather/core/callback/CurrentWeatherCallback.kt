@@ -10,12 +10,11 @@ open class CurrentWeatherCallback<CurrentWeatherResponseModel>(var view: MainVie
 
 
     override fun onFailure(call: Call<com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel>?, t: Throwable?) {
-
+        Log.d("WEATHER" ,"Failure")
     }
 
     override fun onResponse(call: Call<com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel>, response: Response<com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel>) {
         Log.d("WEATHER" ,response.isSuccessful.toString())
-        Log.d("WEATHER" ,response.body().toString())
         Log.d("WEATHER" ,response.body()?.main?.temp.toString())
     }
 

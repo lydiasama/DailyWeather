@@ -9,7 +9,7 @@ import retrofit2.Retrofit
 
 
 interface MainView {
-    fun gotoWeatherActivity()
+    fun gotoCurrentWeatherActivity()
 }
 
 class MainPresenter(val view: MainView) {
