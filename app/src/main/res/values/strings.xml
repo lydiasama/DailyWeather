@@ -6,4 +6,5 @@
     <string name="humidity" formatted="false">Humidity is %1$s%%</string>
     <string name="dialog_btn_ok">OK</string>
     <string name="dialog_title">Sorry,</string>
+    <string name="dialog_not_found_city">City Not Found</string>
 </resources>

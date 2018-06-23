@@ -8,3 +8,6 @@ const val DEFAULT_UNIT = "metric"  // Celsius
 const val TEMP = "TEMP"
 const val HUMIDITY = "HUMIDITY"
 const val CITY = "CITY"
+
+// Error Code
+const val NOT_FOUND = "404"

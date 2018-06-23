@@ -1,10 +1,7 @@
 package com.hallelujah.daily.weather.core.callback
 
 import android.util.Log
-import com.hallelujah.daily.weather.CITY
-import com.hallelujah.daily.weather.HUMIDITY
-import com.hallelujah.daily.weather.TEMP
-import com.hallelujah.daily.weather.DailyWeatherException
+import com.hallelujah.daily.weather.*
 import com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel
 import com.hallelujah.daily.weather.main.MainView
 import com.orhanobut.hawk.Hawk
@@ -27,6 +24,9 @@ class CurrentWeatherCallback(var view: MainView) {
         override fun onFailure(call: Call<CurrentWeatherResponseModel>, t: Throwable) {
             Log.d("WEATHER", "Failure")
             if (t is DailyWeatherException) {
+                when (t.code) {
+                    NOT_FOUND -> t.message = view.getContext().getString(R.string.dialog_not_found_city)
+                }
                 view.displayDialog(message = t.message)
             }
         }
