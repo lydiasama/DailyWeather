@@ -7,6 +7,18 @@
     tools:context=".currentWeather.CurrentWeatherActivity">
 
     <TextView
+        android:id="@+id/tvCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_marginBottom="@dimen/margin_medium"
+        app:layout_constraintBottom_toTopOf="@id/tvNow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Bangkok"/>
+
+    <TextView
+        android:id="@+id/tvNow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tvNowTemp"
@@ -29,8 +41,8 @@
 
     <ImageView
         android:id="@+id/ivWeather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         app:layout_constraintTop_toBottomOf="@id/tvTemp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
