@@ -15,8 +15,9 @@ class ForecastWeatherCallback(var view: ForecastView) {
         override fun onResponse(call: Call<ForecastWeatherResponseModel>, response: Response<ForecastWeatherResponseModel>) {
             Log.d("FORCAST", "Success")
             response.body()?.apply {
-//                view.gotoCurrentWeatherActivity()
-                print(list.toString())
+                list?.let {
+                    view.displayAllDayForcast(it)
+                }
             }
         }
 

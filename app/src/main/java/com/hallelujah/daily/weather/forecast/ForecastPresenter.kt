@@ -7,11 +7,12 @@ import com.hallelujah.daily.weather.core.BaseView
 import com.hallelujah.daily.weather.core.api.ForecastAPI
 import com.hallelujah.daily.weather.core.callback.ForecastWeatherCallback
 import com.hallelujah.daily.weather.core.model.ForecastWeatherResponseModel
+import com.hallelujah.daily.weather.core.model.ItemForecast
 import com.hallelujah.daily.weather.core.network.NetworkCallback
 
 
 interface ForecastView : BaseView {
-    fun gotoAllDayForcast()
+    fun displayAllDayForcast(list: ArrayList<ItemForecast>)
 }
 
 class ForecastPresenter(val view: ForecastView) {

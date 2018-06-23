@@ -2,7 +2,7 @@ package com.hallelujah.daily.weather.core.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Item6(
+data class ItemForecast(
         @SerializedName("dt") val dt: Int?,
         @SerializedName("main") val main: Main?,
         @SerializedName("weather") val weather: List<Weather?>?,

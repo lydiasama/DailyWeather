@@ -5,6 +5,8 @@ import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import org.joda.time.LocalDate
+import java.util.*
 
 class AppUtil {
 
@@ -26,5 +28,15 @@ class AppUtil {
                 view.clearFocus()
             }
         }
+
+        @JvmStatic
+        fun getLocalDate(): String = LocalDate().toString("dd MMM yyyy", Locale.US)
+
+        @JvmStatic
+        fun getDifferentBetweenDate(dateInMillisecond: String) {
+            
+        }
+
+
     }
 }
