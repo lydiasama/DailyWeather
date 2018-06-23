@@ -1,14 +1,11 @@
 package com.hallelujah.daily.weather.currentWeather
 
-import android.content.Context
-import android.content.DialogInterface
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.hallelujah.daily.weather.CITY
 import com.hallelujah.daily.weather.HUMIDITY
 import com.hallelujah.daily.weather.R
 import com.hallelujah.daily.weather.TEMP
-import com.hallelujah.daily.weather.core.BaseView
 import com.orhanobut.hawk.Hawk
 import kotlinx.android.synthetic.main.activity_current_weather.*
 
