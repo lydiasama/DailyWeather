@@ -10,5 +10,8 @@ const val TEMP = "TEMP"
 const val HUMIDITY = "HUMIDITY"
 const val CITY = "CITY"
 
+// Intent
+const val INTENT_ICON_NAME = "ICON_NAME"
+
 // Error Code
 const val NOT_FOUND = "404"

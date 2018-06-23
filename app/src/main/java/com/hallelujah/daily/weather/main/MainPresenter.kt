@@ -7,12 +7,10 @@ import com.hallelujah.daily.weather.core.api.WeatherAPI
 import com.hallelujah.daily.weather.core.callback.CurrentWeatherCallback
 import com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel
 import com.hallelujah.daily.weather.core.network.NetworkCallback
-import com.hallelujah.daily.weather.core.network.createRetrofit
-import retrofit2.Retrofit
 
 
 interface MainView : BaseView {
-    fun gotoCurrentWeatherActivity()
+    fun gotoCurrentWeatherActivity(iconName: String?)
 }
 
 class MainPresenter(val view: MainView) {
@@ -25,7 +23,5 @@ class MainPresenter(val view: MainView) {
                 API_KEY = API_KEY
         ).enqueue(object : NetworkCallback<CurrentWeatherResponseModel>(view, CurrentWeatherCallback(view).getCurrentWeatherCallback()) {})
     }
-
-
 
 }

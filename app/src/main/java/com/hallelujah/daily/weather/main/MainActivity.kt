@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import com.hallelujah.daily.weather.DEFAULT_UNIT
+import com.hallelujah.daily.weather.INTENT_ICON_NAME
 import com.hallelujah.daily.weather.R
 import com.hallelujah.daily.weather.core.util.AppUtil
 import com.hallelujah.daily.weather.currentWeather.CurrentWeatherActivity
@@ -32,8 +33,12 @@ class MainActivity : AppCompatActivity(), MainView {
         }
     }
 
-    override fun gotoCurrentWeatherActivity() {
-        startActivity(Intent(this, CurrentWeatherActivity::class.java))
+    override fun gotoCurrentWeatherActivity(iconName: String?) {
+        val intent = Intent(this, CurrentWeatherActivity::class.java)
+        iconName?.let {
+            intent.putExtra(INTENT_ICON_NAME, it)
+        }
+        startActivity(intent)
     }
 
     private fun setOnDoneAction() {
