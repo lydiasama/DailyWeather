@@ -6,5 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".forecast.ForecastActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forecast_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/margin_large"
+        android:textSize="24sp"/>
+
 
 </android.support.constraint.ConstraintLayout>

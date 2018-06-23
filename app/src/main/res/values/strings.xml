@@ -3,10 +3,11 @@
     <string name="city">CITY</string>
     <string name="btn_current_weather" formatted="false">What\'s the weather at %s like?</string>
     <string name="degree_celsius">°C</string>
-    <string name="humidity" formatted="false">Humidity is %1$s%%</string>
+    <string name="humidity" formatted="false">Humidity : %1$s%%</string>
     <string name="dialog_btn_ok">OK</string>
     <string name="dialog_title">Sorry,</string>
     <string name="dialog_not_found_city">City Not Found</string>
     <string name="tvNowTemp">Now it\'s</string>
     <string name="btn_whole_day_forecast">Whole-day Forecast</string>
+    <string name="forecast_title">Weather and forecast in %s</string>
 </resources>
