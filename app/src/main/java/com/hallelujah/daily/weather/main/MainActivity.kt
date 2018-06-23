@@ -3,6 +3,8 @@ package com.hallelujah.daily.weather.main
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.support.annotation.StringRes
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -68,7 +70,18 @@ class MainActivity : AppCompatActivity(), MainView {
             }
             else -> inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
         }
+    }
 
+    override fun getContext() = this
+
+    override fun displayDialog(message: String, firstButton: Int, block: (Any) -> Unit) {
+        AlertDialog.Builder(this)
+                .setTitle(R.string.dialog_title)
+                .setMessage(message)
+                .setPositiveButton(R.string.dialog_btn_ok, { dialog, _ ->
+                    dialog.dismiss()
+                })
+                .show()
     }
 }
 
