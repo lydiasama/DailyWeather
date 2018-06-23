@@ -3,7 +3,6 @@ package com.hallelujah.daily.weather.core.callback
 import android.util.Log
 import com.hallelujah.daily.weather.*
 import com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel
-import com.hallelujah.daily.weather.currentWeather.CurrentWeatherView
 import com.hallelujah.daily.weather.main.MainView
 import com.orhanobut.hawk.Hawk
 import retrofit2.Call

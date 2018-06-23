@@ -37,6 +37,7 @@ class CurrentWeatherActivity : AppCompatActivity() {
 
     private fun setupView() {
         tvTemp.text = temp
+        tvCity.text = city.toUpperCase()
         tvHumidity.text = getString(R.string.humidity, humidity)
     }
 

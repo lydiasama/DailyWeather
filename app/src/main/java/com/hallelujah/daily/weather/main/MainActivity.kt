@@ -6,11 +6,13 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.inputmethod.EditorInfo
+import com.hallelujah.daily.weather.CITY
 import com.hallelujah.daily.weather.DEFAULT_UNIT
 import com.hallelujah.daily.weather.INTENT_ICON_NAME
 import com.hallelujah.daily.weather.R
 import com.hallelujah.daily.weather.core.util.AppUtil
 import com.hallelujah.daily.weather.currentWeather.CurrentWeatherActivity
+import com.orhanobut.hawk.Hawk
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainView {
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity(), MainView {
 
     private fun setOnClickButton() {
         btnCurrentWeather.setOnClickListener {
+            Hawk.put(CITY, etCity.text.toString())
             mainPresenter.callServiceGetCurrentWeather(
                     city = etCity.text.toString(),
                     unit = DEFAULT_UNIT)
