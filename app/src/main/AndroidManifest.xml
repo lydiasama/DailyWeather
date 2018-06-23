@@ -19,7 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".currentWeather.CurrentWeatherActivity"></activity>
+        <activity android:name=".currentWeather.CurrentWeatherActivity" />
+        <activity android:name=".forecast.Main2Activity" />
+        <activity android:name=".forecast.ForecastActivity"></activity>
     </application>
 
 </manifest>

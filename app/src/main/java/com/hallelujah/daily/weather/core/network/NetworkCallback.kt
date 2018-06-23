@@ -10,6 +10,7 @@ import retrofit2.Response
 open class NetworkCallback<T>(private val view: BaseView, private val mCallback: Callback<T>) : Callback<T> {
 
     override fun onResponse(call: Call<T>, response: Response<T>) {
+            print(response.raw())
         when {
             response.isSuccessful -> mCallback.onResponse(call, response)
             else -> mCallback.onFailure(call,

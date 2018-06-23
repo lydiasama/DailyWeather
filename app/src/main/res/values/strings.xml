@@ -7,4 +7,6 @@
     <string name="dialog_btn_ok">OK</string>
     <string name="dialog_title">Sorry,</string>
     <string name="dialog_not_found_city">City Not Found</string>
+    <string name="tvNowTemp">Now it\'s</string>
+    <string name="btn_whole_day_forecast">Whole-day Forecast</string>
 </resources>

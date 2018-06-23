@@ -7,7 +7,10 @@ import retrofit2.Retrofit
 
 class DailyWeather : Application() {
 
-    lateinit var client: Retrofit
+    companion object {
+        @JvmStatic
+        lateinit var client: Retrofit
+    }
 
     override fun onCreate() {
         super.onCreate()

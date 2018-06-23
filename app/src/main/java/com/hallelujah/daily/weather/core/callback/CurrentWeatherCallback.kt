@@ -32,5 +32,5 @@ class CurrentWeatherCallback(var view: MainView) {
         }
     }
 
-    fun getCurrenWeatherCallback(): Callback<CurrentWeatherResponseModel> = callback
+    fun getCurrentWeatherCallback(): Callback<CurrentWeatherResponseModel> = callback
 }
