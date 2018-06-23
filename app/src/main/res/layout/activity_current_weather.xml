@@ -27,6 +27,14 @@
         app:layout_constraintVertical_bias="0.3"
         tools:text="36.0" />
 
+    <ImageView
+        android:id="@+id/ivWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvTemp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <TextView
         android:id="@+id/tvDegree"
         android:layout_width="wrap_content"
@@ -43,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="@string/humidity"
         android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/tvTemp"
+        app:layout_constraintTop_toBottomOf="@id/ivWeather"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

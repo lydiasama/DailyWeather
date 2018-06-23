@@ -3,22 +3,21 @@ package com.hallelujah.daily.weather.core.callback
 import android.util.Log
 import com.hallelujah.daily.weather.*
 import com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel
-import com.hallelujah.daily.weather.main.MainView
+import com.hallelujah.daily.weather.currentWeather.CurrentWeatherView
 import com.orhanobut.hawk.Hawk
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CurrentWeatherCallback(var view: MainView) {
+class CurrentWeatherCallback(var view: CurrentWeatherView) {
     private val callback = object : Callback<CurrentWeatherResponseModel> {
         override fun onResponse(call: Call<CurrentWeatherResponseModel>, response: Response<CurrentWeatherResponseModel>) {
             Log.d("WEATHER", "Success")
             response.body()?.apply {
                 Hawk.put(TEMP, main?.temp.toString())
                 Hawk.put(HUMIDITY, main?.humidity.toString())
-                Hawk.put(CITY, name)
-                view.gotoCurrentWeatherActivity()
             }
+            response.body()?.let { view.displayCurrentWeather(it) }
         }
 
         override fun onFailure(call: Call<CurrentWeatherResponseModel>, t: Throwable) {
