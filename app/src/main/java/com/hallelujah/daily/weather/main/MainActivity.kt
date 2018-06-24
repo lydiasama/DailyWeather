@@ -30,10 +30,14 @@ class MainActivity : AppCompatActivity(), MainView {
     private fun setOnClickButton() {
         btnCurrentWeather.setOnClickListener {
             Hawk.put(CITY, etCity.text.toString())
-            mainPresenter.callServiceGetCurrentWeather(
-                    city = etCity.text.toString(),
-                    unit = DEFAULT_UNIT)
+            getCurrentWeatherFromService()
         }
+    }
+
+    private fun getCurrentWeatherFromService(unit: String = DEFAULT_UNIT) {
+        mainPresenter.callServiceGetCurrentWeather(
+                city = etCity.text.toString(),
+                unit = DEFAULT_UNIT)
     }
 
     override fun gotoCurrentWeatherActivity(iconName: String?) {

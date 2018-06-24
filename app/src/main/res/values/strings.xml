@@ -13,4 +13,5 @@
 
     <string name="switch_yes">°C</string>
     <string name="switch_no">F</string>
+    <string name="degree_fahrenheit">F</string>
 </resources>
