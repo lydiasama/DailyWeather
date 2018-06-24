@@ -50,11 +50,12 @@ class MainActivity : AppCompatActivity(), MainView {
 
     private fun setOnDoneAction() {
         etCity.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_DONE) {
+            if (actionId == EditorInfo.IME_ACTION_DONE && etCity.text.isNotEmpty()) {
                 visibleButtonGetCurrentWeather()
                 AppUtil.hideSoftKeyboard(etCity)
                 return@setOnEditorActionListener true
             } else {
+                btnCurrentWeather.visibility = View.GONE
                 return@setOnEditorActionListener false
             }
         }
