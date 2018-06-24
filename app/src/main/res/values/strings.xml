@@ -9,5 +9,5 @@
     <string name="dialog_not_found_city">City Not Found</string>
     <string name="tvNowTemp">Now it\'s</string>
     <string name="btn_whole_day_forecast">Whole-day Forecast</string>
-    <string name="forecast_title">Weather and forecast in %s</string>
+    <string name="forecast_title">Forecast Weather in %s</string>
 </resources>

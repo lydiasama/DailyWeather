@@ -10,5 +10,5 @@ data class ItemForecast(
         @SerializedName("wind") val wind: Wind?,
         @SerializedName("rain") val rain: Rain?,
         @SerializedName("sys") val sys: Sys?,
-        @SerializedName("dt_txt") val dtTxt: String?
+        @SerializedName("dt_txt") var dtTxt: String?
 )

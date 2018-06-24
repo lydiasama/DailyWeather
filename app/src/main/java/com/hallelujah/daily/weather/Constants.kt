@@ -5,6 +5,8 @@ const val API_KEY = "a5785043086e07a8483a305abf1b4742"
 const val API_MODE = "json"
 const val DEFAULT_UNIT = "metric"  // Celsius
 
+const val FORECAST_DAY = 1   // between 1-5
+
 // Shared Preference Key
 const val TEMP = "TEMP"
 const val HUMIDITY = "HUMIDITY"
