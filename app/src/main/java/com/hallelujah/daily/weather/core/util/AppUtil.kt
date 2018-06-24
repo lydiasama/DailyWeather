@@ -4,6 +4,11 @@ import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import com.hallelujah.daily.weather.CELSIUS_UNIT
+import com.hallelujah.daily.weather.DEFAULT_UNIT
+import com.hallelujah.daily.weather.DEGREE_UNIT
+import com.hallelujah.daily.weather.R
+import com.orhanobut.hawk.Hawk
 import org.joda.time.Days
 import org.joda.time.LocalDate
 import java.util.*
@@ -38,5 +43,12 @@ class AppUtil {
         }
 
 
+    }
+
+    fun getDegreeUnit(view: View): String {
+        return when (Hawk.get(DEGREE_UNIT, DEFAULT_UNIT)) {
+            CELSIUS_UNIT -> view.context.getString(R.string.degree_celsius)
+            else -> view.context.getString(R.string.degree_fahrenheit)
+        }
     }
 }

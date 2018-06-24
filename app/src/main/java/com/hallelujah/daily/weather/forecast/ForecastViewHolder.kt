@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import com.hallelujah.daily.weather.R
 import com.hallelujah.daily.weather.core.model.ItemForecast
+import com.hallelujah.daily.weather.core.util.AppUtil
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_forecast.view.*
 import kotlinx.android.synthetic.main.item_forecast.view.*
@@ -20,6 +21,7 @@ class ForecastViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         itemView.tvTime.text = data.dtTxt
         itemView.tvHumidity.text = itemView.context.getString(R.string.humidity, data.main?.humidity.toString())
         itemView.tvTemp.text = data.main?.temp.toString()
+        itemView.tvDegree.text = AppUtil().getDegreeUnit(itemView)
     }
 
     private fun setDescription(data: ItemForecast) {

@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import com.hallelujah.daily.weather.*
 import com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel
+import com.hallelujah.daily.weather.core.util.AppUtil
 import com.hallelujah.daily.weather.forecast.ForecastActivity
 import com.orhanobut.hawk.Hawk
 import com.squareup.picasso.Picasso
@@ -85,24 +86,21 @@ class CurrentWeatherActivity : AppCompatActivity(), CurrentWeatherView {
 
     override fun updateCurrentWeather(response: CurrentWeatherResponseModel) {
         tvTemp.text = response.main?.temp.toString()
-        tvDegree.text = when (Hawk.get(DEGREE_UNIT, CELSIUS_UNIT)) {
-            CELSIUS_UNIT -> getString(R.string.degree_celsius)
-            else -> getString(R.string.degree_fahrenheit)
-        }
+        tvDegree.text = AppUtil().getDegreeUnit(tvDegree)
         tvHumidity.text = response.main?.humidity.toString()
     }
 
 
-override fun getContext(): Context = this
+    override fun getContext(): Context = this
 
-override fun displayDialog(message: String, firstButton: Int, block: (Any) -> Unit) {
-    AlertDialog.Builder(this)
-            .setTitle(R.string.dialog_title)
-            .setMessage(message)
-            .setPositiveButton(R.string.dialog_btn_ok, { dialog, _ ->
-                dialog.dismiss()
-            })
-            .show()
-}
+    override fun displayDialog(message: String, firstButton: Int, block: (Any) -> Unit) {
+        AlertDialog.Builder(this)
+                .setTitle(R.string.dialog_title)
+                .setMessage(message)
+                .setPositiveButton(R.string.dialog_btn_ok, { dialog, _ ->
+                    dialog.dismiss()
+                })
+                .show()
+    }
 
 }

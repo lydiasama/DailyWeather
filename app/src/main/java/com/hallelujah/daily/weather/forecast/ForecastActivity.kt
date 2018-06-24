@@ -4,10 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
-import com.hallelujah.daily.weather.CITY
-import com.hallelujah.daily.weather.DEFAULT_UNIT
-import com.hallelujah.daily.weather.FORECAST_DAY
-import com.hallelujah.daily.weather.R
+import com.hallelujah.daily.weather.*
 import com.hallelujah.daily.weather.core.model.ItemForecast
 import com.hallelujah.daily.weather.core.util.AppUtil
 import com.hallelujah.daily.weather.core.util.AppUtil.Companion.getLocalDate
@@ -30,10 +27,10 @@ class ForecastActivity : AppCompatActivity(), ForecastView {
         setupView()
     }
 
-    private fun getForcastFromService(unit: String = DEFAULT_UNIT) {
+    private fun getForcastFromService() {
         forecastPresenter.callServiceGetForcast(
                 city = Hawk.get(CITY),
-                unit = unit
+                unit = Hawk.get(DEGREE_UNIT, DEFAULT_UNIT)
         )
     }
 
