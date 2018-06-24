@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".currentWeather.CurrentWeatherActivity">
 
+    <include
+        android:id="@+id/switch_degree"
+        layout="@layout/item_swith_degree"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/margin_large"/>
+
     <TextView
         android:id="@+id/tvCity"
         android:layout_width="wrap_content"
