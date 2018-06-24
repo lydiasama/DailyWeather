@@ -53,8 +53,6 @@ class ForecastActivity : AppCompatActivity(), ForecastView {
     private fun getDifferentBetweenDate(dateResponse: String): Int {
         val formatOfResponse = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")
         val dateResponseWithFormat = formatOfResponse.parseDateTime(dateResponse)
-        val newFormatOutput = DateTimeFormat.forPattern("dd MMM YYYY")
-        println(newFormatOutput.print(dateResponseWithFormat))
 
         return AppUtil.getDifferentBetweenDate(LocalDate(), LocalDate(dateResponseWithFormat))
     }
