@@ -8,6 +8,10 @@ const val FAHRENHEIT_UNIT = "imperial"
 const val DEFAULT_UNIT = CELSIUS_UNIT
 const val FORECAST_DAY = 1   // between 1-5
 
+const val PATTERN_DATE_RESPONSE = "yyyy-MM-dd HH:mm:ss"
+const val PATTERN_TIME = "HH:mm:ss"
+const val PATTERN_SMALL_DATE = "dd/MM/YYYY"
+
 // Shared Preference Key
 const val TEMP = "TEMP"
 const val HUMIDITY = "HUMIDITY"

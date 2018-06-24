@@ -3,6 +3,8 @@ package com.hallelujah.daily.weather.forecast
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
+import com.hallelujah.daily.weather.PATTERN_SMALL_DATE
+import com.hallelujah.daily.weather.PATTERN_TIME
 import com.hallelujah.daily.weather.R
 import com.hallelujah.daily.weather.core.model.ItemForecast
 import com.hallelujah.daily.weather.core.util.AppUtil
@@ -18,10 +20,11 @@ class ForecastViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 
     private fun setText(data: ItemForecast) {
-        itemView.tvTime.text = data.dtTxt
+        itemView.tvTime.text = AppUtil.getDateFormat(data.dtTxt ?: "", PATTERN_TIME)
         itemView.tvHumidity.text = itemView.context.getString(R.string.humidity, data.main?.humidity.toString())
         itemView.tvTemp.text = data.main?.temp.toString()
         itemView.tvDegree.text = AppUtil().getDegreeUnit(itemView)
+        itemView.tvDateSmall.text = AppUtil.getDateFormat(data.dtTxt ?: "", PATTERN_SMALL_DATE)
     }
 
     private fun setDescription(data: ItemForecast) {

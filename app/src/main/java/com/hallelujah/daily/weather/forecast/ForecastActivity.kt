@@ -44,24 +44,14 @@ class ForecastActivity : AppCompatActivity(), ForecastView {
         list.filter {
             getDifferentBetweenDate(it.dtTxt ?: "") < FORECAST_DAY
         }
-        list.forEach {
-            it.dtTxt = getTimeOnly(it.dtTxt ?: "")
-        }
         adapter.setItemList(list)
     }
 
     private fun getDifferentBetweenDate(dateResponse: String): Int {
-        val formatOfResponse = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")
+        val formatOfResponse = DateTimeFormat.forPattern(PATTERN_DATE_RESPONSE)
         val dateResponseWithFormat = formatOfResponse.parseDateTime(dateResponse)
 
         return AppUtil.getDifferentBetweenDate(LocalDate(), LocalDate(dateResponseWithFormat))
-    }
-
-    private fun getTimeOnly(dateTime: String): String {
-        val formatOfResponse = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")
-        val dateResponseWithFormat = formatOfResponse.parseDateTime(dateTime)
-        val newFormatOutput = DateTimeFormat.forPattern("HH:mm:ss")
-        return newFormatOutput.print(dateResponseWithFormat)
     }
 
     override fun getContext(): Context = this

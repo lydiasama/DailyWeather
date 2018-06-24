@@ -4,13 +4,11 @@ import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
-import com.hallelujah.daily.weather.CELSIUS_UNIT
-import com.hallelujah.daily.weather.DEFAULT_UNIT
-import com.hallelujah.daily.weather.DEGREE_UNIT
-import com.hallelujah.daily.weather.R
+import com.hallelujah.daily.weather.*
 import com.orhanobut.hawk.Hawk
 import org.joda.time.Days
 import org.joda.time.LocalDate
+import org.joda.time.format.DateTimeFormat
 import java.util.*
 
 class AppUtil {
@@ -42,7 +40,13 @@ class AppUtil {
             return Days.daysBetween(startDate, endDate).days
         }
 
-
+        @JvmStatic
+        fun getDateFormat(dateResponse: String, patternFinal: String): String {
+            val formatOfResponse = DateTimeFormat.forPattern(PATTERN_DATE_RESPONSE)
+            val dateResponseWithFormat = formatOfResponse.parseDateTime(dateResponse)
+            val newFormatOutput = DateTimeFormat.forPattern(patternFinal)
+            return newFormatOutput.print(dateResponseWithFormat)
+        }
     }
 
     fun getDegreeUnit(view: View): String {

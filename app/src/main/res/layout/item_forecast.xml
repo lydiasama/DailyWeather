@@ -15,6 +15,16 @@
         android:textSize="16sp"
         tools:text="12:00"/>
 
+    <TextView
+        android:id="@+id/tvDateSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        tools:text="24/06/2018"
+        app:layout_constraintStart_toStartOf="@id/tvTime"
+        app:layout_constraintTop_toBottomOf="@id/tvTime"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvHumidity"/>
+
     <ImageView
         android:id="@+id/iconWeather"
         android:layout_width="36dp"
@@ -37,7 +47,7 @@
         android:id="@+id/tvTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/tvDesc"
+        app:layout_constraintStart_toEndOf="@id/guideline"
         app:layout_constraintEnd_toStartOf="@id/tvDegree"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintTop_toTopOf="parent"
@@ -71,6 +81,13 @@
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvHumidity"
         android:background="@color/colorBorder" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
 
 
 </android.support.constraint.ConstraintLayout>
