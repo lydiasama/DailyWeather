@@ -34,6 +34,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:visibility="gone"
+        android:clickable="true"
         android:text="@string/btn_current_weather"
         android:background="@drawable/btn_black_blue_border"
         android:layout_marginTop="@dimen/margin_medium"

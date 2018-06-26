@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity(), MainView {
 
     private fun setOnClickButton() {
         btnCurrentWeather.setOnClickListener {
+            btnCurrentWeather.isClickable = false
             Hawk.put(CITY, etCity.text.toString())
             getCurrentWeatherFromService()
         }
@@ -74,6 +75,7 @@ class MainActivity : AppCompatActivity(), MainView {
                 .setMessage(message)
                 .setPositiveButton(R.string.dialog_btn_ok, { dialog, _ ->
                     dialog.dismiss()
+                    btnCurrentWeather.isClickable = false
                 })
                 .show()
     }

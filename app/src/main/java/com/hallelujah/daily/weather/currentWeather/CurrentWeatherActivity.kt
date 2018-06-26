@@ -70,6 +70,7 @@ class CurrentWeatherActivity : AppCompatActivity(), CurrentWeatherView {
 
     private fun setOnClickListener() {
         btnWholeDayForeCast.setOnClickListener {
+            btnWholeDayForeCast.isClickable = false
             gotoForecastActivity()
         }
     }
@@ -99,6 +100,7 @@ class CurrentWeatherActivity : AppCompatActivity(), CurrentWeatherView {
                 .setMessage(message)
                 .setPositiveButton(R.string.dialog_btn_ok, { dialog, _ ->
                     dialog.dismiss()
+                    btnWholeDayForeCast.isClickable = true
                 })
                 .show()
     }
