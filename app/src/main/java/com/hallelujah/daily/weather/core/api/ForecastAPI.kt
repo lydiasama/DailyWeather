@@ -1,6 +1,5 @@
 package com.hallelujah.daily.weather.core.api
 
-import com.hallelujah.daily.weather.core.model.CurrentWeatherResponseModel
 import com.hallelujah.daily.weather.core.model.ForecastWeatherResponseModel
 import retrofit2.Call
 import retrofit2.http.GET
