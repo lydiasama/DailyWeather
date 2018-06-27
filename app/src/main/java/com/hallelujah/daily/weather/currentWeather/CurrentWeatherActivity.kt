@@ -79,7 +79,7 @@ class CurrentWeatherActivity : AppCompatActivity(), CurrentWeatherView {
         startActivity(Intent(this, ForecastActivity::class.java))
     }
 
-    private fun getCurrentWeatherFromService(unit: String = DEFAULT_UNIT) {
+    private fun getCurrentWeatherFromService(unit: String = Hawk.get(DEGREE_UNIT, DEFAULT_UNIT)) {
         currentWeatherPresenter.callServiceGetCurrentWeather(
                 city = Hawk.get(CITY),
                 unit = unit)
