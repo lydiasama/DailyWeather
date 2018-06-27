@@ -6,10 +6,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.inputmethod.EditorInfo
-import com.hallelujah.daily.weather.CITY
-import com.hallelujah.daily.weather.DEFAULT_UNIT
-import com.hallelujah.daily.weather.INTENT_ICON_NAME
-import com.hallelujah.daily.weather.R
+import com.hallelujah.daily.weather.*
 import com.hallelujah.daily.weather.core.util.AppUtil
 import com.hallelujah.daily.weather.currentWeather.CurrentWeatherActivity
 import com.orhanobut.hawk.Hawk
@@ -27,6 +24,11 @@ class MainActivity : AppCompatActivity(), MainView {
         AppUtil.showSoftKeyboard(etCity)
     }
 
+    override fun onResume() {
+        super.onResume()
+        btnCurrentWeather.isClickable = true
+    }
+
     private fun setOnClickButton() {
         btnCurrentWeather.setOnClickListener {
             btnCurrentWeather.isClickable = false
@@ -35,10 +37,10 @@ class MainActivity : AppCompatActivity(), MainView {
         }
     }
 
-    private fun getCurrentWeatherFromService(unit: String = DEFAULT_UNIT) {
+    private fun getCurrentWeatherFromService(unit: String = Hawk.get(DEGREE_UNIT, DEFAULT_UNIT)) {
         mainPresenter.callServiceGetCurrentWeather(
                 city = etCity.text.toString(),
-                unit = DEFAULT_UNIT)
+                unit = unit)
     }
 
     override fun gotoCurrentWeatherActivity(iconName: String?) {
@@ -74,8 +76,8 @@ class MainActivity : AppCompatActivity(), MainView {
                 .setTitle(R.string.dialog_title)
                 .setMessage(message)
                 .setPositiveButton(R.string.dialog_btn_ok, { dialog, _ ->
+                    btnCurrentWeather.isClickable = true
                     dialog.dismiss()
-                    btnCurrentWeather.isClickable = false
                 })
                 .show()
     }

@@ -47,6 +47,11 @@ class CurrentWeatherActivity : AppCompatActivity(), CurrentWeatherView {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        btnWholeDayForeCast.isClickable = true
+    }
+
     private fun getIconNameFromeIntent() {
         this.iconName = intent.getStringExtra(INTENT_ICON_NAME)
     }
@@ -99,8 +104,8 @@ class CurrentWeatherActivity : AppCompatActivity(), CurrentWeatherView {
                 .setTitle(R.string.dialog_title)
                 .setMessage(message)
                 .setPositiveButton(R.string.dialog_btn_ok, { dialog, _ ->
-                    dialog.dismiss()
                     btnWholeDayForeCast.isClickable = true
+                    dialog.dismiss()
                 })
                 .show()
     }
