@@ -12,6 +12,7 @@ import com.hallelujah.daily.weather.forecast.ForecastActivity
 import com.orhanobut.hawk.Hawk
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_current_weather.*
+import kotlinx.android.synthetic.main.item_swith_degree.*
 import kotlinx.android.synthetic.main.item_swith_degree.view.*
 
 class CurrentWeatherActivity : AppCompatActivity(), CurrentWeatherView {
@@ -31,20 +32,7 @@ class CurrentWeatherActivity : AppCompatActivity(), CurrentWeatherView {
         setupView()
         setOnClickListener()
 
-        switch_degree.toggle.setOnCheckedChangeListener { group, checkedId ->
-            when (checkedId) {
-                R.id.fahrenheit -> {
-                    Hawk.put(DEGREE_UNIT, FAHRENHEIT_UNIT)
-                    getCurrentWeatherFromService(unit = FAHRENHEIT_UNIT)
 
-                }
-                else -> {
-                    Hawk.put(DEGREE_UNIT, CELSIUS_UNIT)
-                    getCurrentWeatherFromService(unit = CELSIUS_UNIT)
-
-                }
-            }
-        }
     }
 
     override fun onResume() {
@@ -66,6 +54,17 @@ class CurrentWeatherActivity : AppCompatActivity(), CurrentWeatherView {
         tvTemp.text = temp
         tvCity.text = city.toUpperCase()
         tvHumidity.text = getString(R.string.humidity, humidity)
+        when (Hawk.get(DEGREE_UNIT, DEFAULT_UNIT)) {
+            CELSIUS_UNIT -> {
+                toggle.check(R.id.celsius)
+                tvDegree.text = getString(R.string.degree_celsius)
+            }
+            else -> {
+                toggle.check(R.id.fahrenheit)
+                tvDegree.text = getString(R.string.degree_fahrenheit)
+            }
+        }
+
     }
 
     private fun setupIconWeather() {
@@ -77,6 +76,21 @@ class CurrentWeatherActivity : AppCompatActivity(), CurrentWeatherView {
         btnWholeDayForeCast.setOnClickListener {
             btnWholeDayForeCast.isClickable = false
             gotoForecastActivity()
+        }
+
+        switch_degree.toggle.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
+                R.id.fahrenheit -> {
+                    Hawk.put(DEGREE_UNIT, FAHRENHEIT_UNIT)
+                    getCurrentWeatherFromService(unit = FAHRENHEIT_UNIT)
+
+                }
+                else -> {
+                    Hawk.put(DEGREE_UNIT, CELSIUS_UNIT)
+                    getCurrentWeatherFromService(unit = CELSIUS_UNIT)
+
+                }
+            }
         }
     }
 
